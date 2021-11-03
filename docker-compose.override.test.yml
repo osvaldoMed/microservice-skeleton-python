@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  flask-api:
+    image: medtrainer/app-name:test
+    container_name: app-name
+    build:
+      target: test
+    volumes:
+      - .:/app
+    environment:
+      - ENVIRONMENT=test
+    entrypoint: ["python", "-m", "pytest"]

@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  flask-api:
+    image: medtrainer/app-name:prod
+    container_name: app-name
+    build:
+      target: prod
+    environment:
+      - ENVIRONMENT=production
+    entrypoint: ["python", "-m", "commands", "to", "run", "app"]
