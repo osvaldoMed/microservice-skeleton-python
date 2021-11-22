@@ -3,7 +3,6 @@ RUN apt-get update
 WORKDIR /app
 COPY ./requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-EXPOSE 5000
 
 FROM base AS dev
 RUN pip install ptvsd debugpy
@@ -13,11 +12,12 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 FROM base AS test
-
 # Install pytest
 RUN pip install pytest
-
 
 FROM base AS prod
 COPY . .
 CMD ["python", "-m", "commands", "to", "run", "app"]
+
+
+

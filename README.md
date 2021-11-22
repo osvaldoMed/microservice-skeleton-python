@@ -55,3 +55,9 @@ To attatch to the debugger make sure `port=5678` is set up and `.vscode/launch.j
 ```
 docker-compose -f docker-compose.yml -f docker-compose.override.prod.yml up -d
 ```
+
+### Flask API skeleton example
+
+Here is a link for an API example that implements the debugger and testing from this microservice-skeleton.
+
+https://github.com/osvaldoMed/flask-api-skeleton
